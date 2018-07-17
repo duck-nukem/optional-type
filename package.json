@@ -1,0 +1,38 @@
+{
+  "name": "optional-ts",
+  "version": "1.0.0",
+  "description": "Optional implementation in Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "docs": "typedoc --ignoreCompilerErrors --out ./docs/ --name Optional.ts --readme README.md --module system --exclude /node_modules/** --entryPoint \"index\""
+  },
+  "keywords": [
+    "optional",
+    "typescript",
+    "nullable"
+  ],
+  "author": "Alex Szabo <kreatemore@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^23.3.0",
+    "jest": "^23.4.1",
+    "ts-jest": "^23.0.0",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
