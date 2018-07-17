@@ -92,12 +92,6 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="optional.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="optional.html#value" class="tsd-kind-icon">value</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
@@ -131,7 +125,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L2">index.ts:2</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L2">index.ts:2</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -148,19 +142,6 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="value" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> value</h3>
-					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L2">index.ts:2</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
@@ -173,14 +154,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L186">index.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L176">index.ts:176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>If a value is present, and the value matches the given predicate,
-										returns an {@code Optional} describing the value, otherwise returns an
-									empty {@code Optional}.</p>
+										returns an <code>Optional</code> describing the value, otherwise returns an
+									empty <code>Optional</code>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -211,9 +192,9 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="optional.html" class="tsd-signature-type">Optional</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>an {@code Optional} describing the value of this
-								{@code Optional}, if a value is present and the value matches the
-							given predicate, otherwise an empty {@code Optional}</p>
+							<p>an <code>Optional</code> describing the value of this
+								<code>Optional</code>, if a value is present and the value matches the
+							given predicate, otherwise an empty <code>Optional</code></p>
 						</li>
 					</ul>
 				</section>
@@ -227,29 +208,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L168">index.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L158">index.ts:158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>If a value is present, returns the value, otherwise throws
-									{@code NullValueException}.</p>
+									<code>NullValueException</code>.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>deprecated</dt>
-									<dd><p>this is counter intuitive for Optionals,
-										use {@link isPresent()} or {@link ifPresent()}</p>
+									<dd><p>this is counter intuitive for <code>Optional</code>,
+											since it throws an error if the value is <code>null</code>, recommended to
+										use <a href="optional.html#ispresent">isPresent</a> or <a href="optional.html#ifpresent">ifPresent</a>, etc instead</p>
 									</dd>
 									<dt>throws</dt>
-									<dd><p>NullValueException if no value is present</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p>Optional#isPresent()</p>
+									<dd><p><code>NullValueException</code> if no value is present</p>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-							<p>the non-{@code null} value described by this {@code Optional}</p>
+							<p>the non-<code>null</code> value described by this <code>Optional</code></p>
 						</li>
 					</ul>
 				</section>
@@ -263,7 +242,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L92">index.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L86">index.ts:86</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -313,7 +292,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L107">index.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L100">index.ts:100</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -321,11 +300,6 @@
 									<p>If a value is present, performs the given action with the value,
 									otherwise performs the given empty-based action.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>since</dt>
-									<dd><p>9</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -387,16 +361,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L82">index.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L76">index.ts:76</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>If a value is present, returns {@code true}, otherwise {@code false}.</p>
+									<p>If a value is present, returns <code>true</code>, otherwise <code>false</code>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>if a value is present, otherwise {@code false}</p>
+							<p><code>true</code> if a value is present, otherwise <code>false</code></p>
 						</li>
 					</ul>
 				</section>
@@ -410,17 +384,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L207">index.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L197">index.ts:197</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>If a value is present, returns an {@code Optional} describing (as if by
+									<p>If a value is present, returns an <code>Optional</code> describing (as if by
 										<a href="optional.html#ofnullable">ofNullable</a>) the result of applying the given mapping function to
-									the value, otherwise returns an empty {@code Optional}.</p>
+									the value, otherwise returns an empty <code>Optional</code>.</p>
 								</div>
-								<p><p>If the mapping function returns a {@code null} result then this method
-									returns an empty {@code Optional}.</p>
+								<p><p>If the mapping function returns a <code>null</code> result then this method
+									returns an empty <code>Optional</code>.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -459,9 +433,9 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="optional.html" class="tsd-signature-type">Optional</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>an {@code Optional} describing the result of applying a mapping
-								function to the value of this {@code Optional}, if a value is
-							present, otherwise an empty {@code Optional}</p>
+							<p>an <code>Optional</code> describing the result of applying a mapping
+								function to the value of this <code>Optional</code>, if a value is
+							present, otherwise an empty <code>Optional</code></p>
 						</li>
 					</ul>
 				</section>
@@ -475,13 +449,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L123">index.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L116">index.ts:116</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>If a value is present, returns the value, otherwise returns
-									{@code other}.</p>
+									<code>other</code>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -490,12 +464,12 @@
 									<h5>other: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the value to be returned, if no value is present.
-										May be {@code null}.</p>
+										May be <code>null</code>.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-							<p>the value, if present, otherwise {@code other}</p>
+							<p>the value, if present, otherwise <code>other</code></p>
 						</li>
 					</ul>
 				</section>
@@ -509,7 +483,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L137">index.ts:137</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L128">index.ts:128</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -517,12 +491,6 @@
 									<p>If a value is present, returns the value, otherwise returns the result
 									produced by the supplying function.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>throws</dt>
-									<dd><p>NullPointerException if no value is present and the supplying
-										function is {@code null}</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -561,7 +529,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L150">index.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L140">index.ts:140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -588,8 +556,7 @@
 								<li>
 									<h5>error: <span class="tsd-signature-type">X</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the supplying function that produces an
-										exception to be thrown</p>
+										<p>the exception to be thrown</p>
 									</div>
 								</li>
 							</ul>
@@ -611,22 +578,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L67">index.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L61">index.ts:61</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns a non-empty string representation of this {@code Optional}
+									<p>Returns a non-empty string representation of this <code>Optional</code>
 										suitable for debugging.  The exact presentation format is unspecified and
 									may vary between implementations and versions.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>implspec</dt>
-									<dd><p>If a value is present the result must include its string representation
-											in the result.  Empty and present {@code Optional}s must be unambiguously
-										differentiable.</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 							<p>the string representation of this instance</p>
@@ -643,22 +603,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L51">index.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L50">index.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns an empty {@code Optional} instance.  No value is present for this
-									{@code Optional}.</p>
+									<p>Returns an empty <code>Optional</code> instance.  No value is present for this
+									<code>Optional</code>.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>apinote</dt>
-									<dd><p>Though it may be tempting to do so, avoid testing if an object is empty
-											by comparing with {@code ==} against instances returned by
-											{@code Optional.empty()}.  There is no guarantee that it is a singleton.
-										Instead, use {@link isPresent()}.</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -670,7 +622,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="optional.html" class="tsd-signature-type">Optional</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>an empty {@code Optional}</p>
+							<p>an empty <code>Optional</code></p>
 						</li>
 					</ul>
 				</section>
@@ -684,17 +636,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L21">index.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L26">index.ts:26</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns an {@code Optional} describing the given non-{@code null}
+									<p>Returns an <code>Optional</code> describing the given non-<code>null</code>
 									value.</p>
 								</div>
 								<dl class="tsd-comment-tags">
+									<dt>apinote</dt>
+									<dd><p>Though it may be tempting to do so, avoid testing if an object is empty by
+											comparing with <code>==</code> against instances returned by <code>Optional.empty()</code>,
+										use <a href="optional.html#ispresent">isPresent</a> instead.</p>
+									</dd>
 									<dt>throws</dt>
-									<dd><p>NullValueException if value is {@code null}</p>
+									<dd><p><code>NullValueException</code> if value is <code>null</code></p>
 									</dd>
 								</dl>
 							</div>
@@ -712,12 +669,12 @@
 								<li>
 									<h5>value: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the value to describe, which must be non-{@code null}</p>
+										<p>the value to describe, which must be non-<code>null</code></p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="optional.html" class="tsd-signature-type">Optional</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>an {@code Optional} with the value present</p>
+							<p>an <code>Optional</code> with the value present</p>
 						</li>
 					</ul>
 				</section>
@@ -731,13 +688,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/5c2a8a5/index.ts#L34">index.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/kreatemore/optional-ts/blob/78a1e3a/index.ts#L39">index.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns an {@code Optional} describing the given value, if
-									non-{@code null}, otherwise returns an empty {@code Optional}.</p>
+									<p>Returns an <code>Optional</code> describing the given value, if
+									non-<code>null</code>, otherwise returns an empty <code>Optional</code>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -754,13 +711,13 @@
 								<li>
 									<h5>value: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the possibly-{@code null} value to describe</p>
+										<p>the possibly-<code>null</code> value to describe</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="optional.html" class="tsd-signature-type">Optional</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>an {@code Optional} with a present value if the specified value
-							is non-{@code null}, otherwise an empty {@code Optional}</p>
+							<p>an <code>Optional</code> with a present value if the specified value
+							is non-<code>null</code>, otherwise an empty <code>Optional</code></p>
 						</li>
 					</ul>
 				</section>
@@ -786,9 +743,6 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="optional.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="optional.html#value" class="tsd-kind-icon">value</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="optional.html#filter" class="tsd-kind-icon">filter</a>
