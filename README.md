@@ -3,7 +3,7 @@
 A wrapper class trying to be Java's Optional.
 
 ## Docs
-[Link](https://kreatemore.github.io/optional-ts/modules/_index_.html)
+[Link](https://kreatemore.github.io/optional-ts/index.html)
 
 Then navigate using the right hand side of the page. 
 
@@ -20,3 +20,14 @@ This is where `Optional` can be helpful, as you can avoid doing
  
 Some very good examples can be found [here](http://www.baeldung.com/java-optional).
 The examples are written in Java, but the concept should get across regardless.
+
+## Contributing
+
+To get the project running locally:
+
+1. clone
+2. npm install
+3. npm run test to run jest
+
+Before committing, please recompile javascript files and the docs.
+Latter is done using `npm run docs`.
