@@ -203,6 +203,32 @@ export class Optional<T> {
 
     return Optional.ofNullable(value);
   }
+
+  /**
+   * If a value is present, returns the result of applying the given
+   * `Optional`-bearing mapping function to the value, otherwise returns
+   * an empty `Optional`.
+   *
+   * This method is similar to {@link map}, but the mapping
+   * function is one whose result is already an `Optional`, and if
+   * invoked, `flatMap` does not wrap it within an additional `Optional`.
+   *
+   * @param <U> The type of value of the `Optional` returned by the
+   *            mapping function
+   * @param mapper the mapping function to apply to a value, if present
+   * @return the result of applying an `Optional`-bearing mapping
+   *         function to the value of this `Optional`, if a value is
+   *         present, otherwise an empty `Optional`
+   */
+  flatMap<U>(mapper: (value?: T) => U): U | Optional<T> {
+    const value = mapper(this.value);
+
+    if (!this.isPresent() || value === null) {
+      return Optional.empty();
+    }
+
+    return value;
+  }
 }
 
 export class NullValueException extends Error {

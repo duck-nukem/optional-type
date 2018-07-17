@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "docs": "typedoc --ignoreCompilerErrors --mode file --out ./docs/ --name Optional.ts --readme README.md --excludePrivate --module system --exclude /node_modules/** --entryPoint \"index\""
+    "docs": "typedoc --ignoreCompilerErrors --mode file --out ./docs/ --name Optional.ts --readme README.md --excludePrivate --module system --exclude /node_modules/**"
   },
   "keywords": [
     "optional",

@@ -64,30 +64,36 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="optional-ts-">Optional.ts 🤷‍♂️</h1>
-				<p><a href="https://codeclimate.com/github/kreatemore/optional-ts/maintainability"><img src="https://api.codeclimate.com/v1/badges/702b920220cbcf5e8894/maintainability" alt="Maintainability"></a></p>
+				<h1 id="optional-type-">Optional-type 🤷‍♂️</h1>
+				<p><a href="https://codeclimate.com/github/kreatemore/optional-ts/maintainability"><img src="https://api.codeclimate.com/v1/badges/702b920220cbcf5e8894/maintainability" alt="Maintainability"></a>
+				<a href="https://snyk.io/test/github/kreatemore/optional-ts?targetFile=package.json"><img src="https://snyk.io/test/github/kreatemore/optional-ts/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a></p>
 				<p>A wrapper class trying to be Java&#39;s Optional.</p>
 				<h2 id="docs">Docs</h2>
-				<p><a href="https://kreatemore.github.io/optional-ts/index.html">Link</a></p>
-				<p>Then navigate using the right hand side of the page. </p>
+				<p><a href="https://kreatemore.github.io/optional-ts/index.html">Link</a>
+				(navigate using the right hand side) </p>
 				<h2 id="why">Why</h2>
-				<p>Your application might need to add special meaning to null values.
-					For example, your search might return <code>[]</code> or <code>null</code> depending if the
-				filters yielded no results, or if you have no data yet in the system.</p>
-				<p>This is where <code>Optional</code> can be helpful, as you can avoid doing
-				<code>if (result === null) { ... }</code> every time you work with a nullable type.</p>
-				<h2 id="examples">Examples</h2>
+				<ul>
+					<li>Your application might need to add special meaning to <code>null</code> values.</li>
+					<li>Avoid repeating <code>if(expr === null)</code></li>
+					<li><p>Avoid <code>cannot read property prop of null</code></p>
+						<h2 id="examples">Examples</h2>
+					</li>
+				</ul>
 				<p>Some very good examples can be found <a href="http://www.baeldung.com/java-optional">here</a>.
 				The examples are written in Java, but the concept should get across regardless.</p>
-				<h2 id="contributing">Contributing</h2>
+				<pre><code><span class="hljs-title">const</span> results = <span class="hljs-type">Optional</span>.ofNullable(response)
+                        .map(response =&gt; response.<span class="hljs-class"><span class="hljs-keyword">data</span>)</span>
+                        .filter(<span class="hljs-class"><span class="hljs-keyword">data</span> =&gt; !!<span class="hljs-keyword">data</span>.length)</span>
+                        .ifPresent(<span class="hljs-class"><span class="hljs-keyword">data</span> =&gt; serialize(<span class="hljs-title">data</span>))</span>
+                        .orElse([]);
+</code></pre><h2 id="contributing">Contributing</h2>
 				<p>To get the project running locally:</p>
 				<ol>
-					<li>clone</li>
-					<li>npm install</li>
-					<li>npm run test to run jest</li>
+					<li><code>git clone</code></li>
+					<li><code>npm install</code></li>
+					<li><code>npm run test</code> to run jest</li>
 				</ol>
-				<p>Before committing, please recompile javascript files and the docs.
-				Latter is done using <code>npm run docs</code>.</p>
+				<p>Before committing, please recompile the docs using <code>npm run docs</code>.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

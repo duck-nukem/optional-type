@@ -144,4 +144,16 @@ describe('Optional', () => {
       expect(optional).toEqual(Optional.empty());
     });
   });
+
+  describe('.flatMap', () => {
+    it('should return the value without wrapping as Optional', () => {
+      const optional = Optional.of('str');
+      expect(optional.flatMap(v => v)).toEqual('str');
+    });
+
+    it('should return Optional.empty() if value is null', () => {
+      const optional = Optional.ofNullable(null);
+      expect(optional.flatMap(v => v)).toEqual(Optional.empty());
+    });
+  });
 });
