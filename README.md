@@ -1,6 +1,6 @@
 # Optional.ts 🤷‍♂️
 [![Maintainability](https://api.codeclimate.com/v1/badges/702b920220cbcf5e8894/maintainability)](https://codeclimate.com/github/kreatemore/optional-ts/maintainability)
-
+[![Known Vulnerabilities](https://snyk.io/test/github/kreatemore/optional-ts/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kreatemore/optional-ts?targetFile=package.json)
 
 A wrapper class trying to be Java's Optional.
 
@@ -31,5 +31,4 @@ To get the project running locally:
 2. npm install
 3. npm run test to run jest
 
-Before committing, please recompile javascript files and the docs.
-Latter is done using `npm run docs`.
+Before committing, please recompile the docs using `npm run docs`.
