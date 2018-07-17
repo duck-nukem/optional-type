@@ -5,7 +5,7 @@
 A wrapper class trying to be Java's Optional.
 
 ## Docs
-[Link](https://kreatemore.github.io/optional-ts/index.html)
+[Link](https://kreatemore.github.io/optional-type/index.html)
 (navigate using the right hand side) 
 
 ## Why
