@@ -138,7 +138,7 @@ export class Optional<T> {
    * @throws X if no value is present
    */
   orElseThrow<X extends Error>(error: X): T | X {
-    if (!this.value) {
+    if (!this.isPresent()) {
       throw error;
     }
 
@@ -156,7 +156,7 @@ export class Optional<T> {
    * @throws `NullValueException` if no value is present
    */
   get(): T {
-    if (!this.value) {
+    if (!this.isPresent()) {
       throw new NullValueException();
     }
 
