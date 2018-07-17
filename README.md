@@ -1,4 +1,6 @@
 # Optional.ts 🤷‍♂️
+[![Maintainability](https://api.codeclimate.com/v1/badges/702b920220cbcf5e8894/maintainability)](https://codeclimate.com/github/kreatemore/optional-ts/maintainability)
+
 
 A wrapper class trying to be Java's Optional.
 
