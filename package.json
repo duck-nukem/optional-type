@@ -18,6 +18,7 @@
   "devDependencies": {
     "@types/jest": "^23.3.0",
     "jest": "^23.4.1",
+    "jest-junit": "^5.1.0",
     "ts-jest": "^23.0.0",
     "typedoc": "^0.11.1",
     "typescript": "^2.9.2"
@@ -26,6 +27,10 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
       "ts",
@@ -35,5 +40,13 @@
       "json",
       "node"
     ]
+  },
+  "jest-junit": {
+    "suiteName": "jest tests",
+    "output": "./test-results/jest/results.xml",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
   }
 }

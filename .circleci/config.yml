@@ -21,8 +21,14 @@ jobs:
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
       - run:
+          name: Prepare store for test results
+          command: mkdir -p ./test-results/jest/
+      - run:
           name: Test
           command: |
             ./cc-test-reporter before-build
             npm run test:ci
             ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $?
+      - store_test_results:
+          path: test-results
+
