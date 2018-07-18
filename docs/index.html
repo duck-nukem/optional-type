@@ -65,20 +65,27 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="optional-type-">Optional-type 🤷‍♂️</h1>
-				<p><a href="https://codeclimate.com/github/kreatemore/optional-ts/maintainability"><img src="https://api.codeclimate.com/v1/badges/702b920220cbcf5e8894/maintainability" alt="Maintainability"></a>
-				<a href="https://snyk.io/test/github/kreatemore/optional-ts?targetFile=package.json"><img src="https://snyk.io/test/github/kreatemore/optional-ts/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a></p>
-				<p>A wrapper class trying to be Java&#39;s Optional.</p>
-				<h2 id="docs">Docs</h2>
-				<p><a href="https://kreatemore.github.io/optional-type/index.html">Link</a>
-				(navigate using the right hand side) </p>
+				<p><a href="https://codeclimate.com/github/kreatemore/optional-type/maintainability"><img src="https://api.codeclimate.com/v1/badges/14424b3dc99cc590b30b/maintainability" alt="Maintainability"></a>
+					<a href="https://codeclimate.com/github/kreatemore/optional-type/test_coverage"><img src="https://api.codeclimate.com/v1/badges/14424b3dc99cc590b30b/test_coverage" alt="Test Coverage"></a>
+					<a href="https://snyk.io/test/github/kreatemore/optional-ts?targetFile=package.json"><img src="https://snyk.io/test/github/kreatemore/optional-ts/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
+				<a href="https://circleci.com/gh/kreatemore/optional-type"><img src="https://circleci.com/gh/kreatemore/optional-type.svg?style=svg" alt="CircleCI"></a></p>
+				<p>A Typescript class trying to be Java&#39;s Optional.</p>
+				<h2 id="resources">Resources</h2>
+				<ul>
+					<li><a href="https://kreatemore.github.io/optional-type/index.html">docs</a>
+					(navigate using the right hand side)</li>
+					<li><a href="https://github.com/kreatemore/optional-type">github repository</a></li>
+					<li><a href="https://github.com/kreatemore/optional-type/issues">issue tracker</a></li>
+					<li><a href="https://github.com/kreatemore/optional-type/issues/new/choose">create issue</a></li>
+					<li><a href="https://www.npmjs.com/package/optional-type">npm package</a></li>
+				</ul>
 				<h2 id="why">Why</h2>
 				<ul>
 					<li>Your application might need to add special meaning to <code>null</code> values.</li>
 					<li>Avoid repeating <code>if(expr === null)</code></li>
-					<li><p>Avoid <code>cannot read property prop of null</code></p>
-						<h2 id="examples">Examples</h2>
-					</li>
+					<li>Avoid <code>cannot read property prop of null</code></li>
 				</ul>
+				<h2 id="examples">Examples</h2>
 				<p>Some very good examples can be found <a href="http://www.baeldung.com/java-optional">here</a>.
 				The examples are written in Java, but the concept should get across regardless.</p>
 				<pre><code><span class="hljs-title">const</span> results = <span class="hljs-type">Optional</span>.ofNullable(response)

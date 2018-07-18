@@ -1,4 +1,6 @@
+
 # Optional-type 🤷‍♂️
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/14424b3dc99cc590b30b/maintainability)](https://codeclimate.com/github/kreatemore/optional-type/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/14424b3dc99cc590b30b/test_coverage)](https://codeclimate.com/github/kreatemore/optional-type/test_coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/kreatemore/optional-ts/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kreatemore/optional-ts?targetFile=package.json)
@@ -6,15 +8,14 @@
 
 A Typescript class trying to be Java's Optional.
 
-
 ## Resources
+
 * [docs](https://kreatemore.github.io/optional-type/index.html)
 (navigate using the right hand side)
 * [github repository](https://github.com/kreatemore/optional-type)
 * [issue tracker](https://github.com/kreatemore/optional-type/issues)
 * [create issue](https://github.com/kreatemore/optional-type/issues/new/choose)
-* [npm package](https://www.npmjs.com/package/optional-type) 
-
+* [npm package](https://www.npmjs.com/package/optional-type)
 
 ## Why
 
@@ -22,9 +23,8 @@ A Typescript class trying to be Java's Optional.
 * Avoid repeating `if(expr === null)`
 * Avoid `cannot read property prop of null`
 
+## Examples
 
- ## Examples
- 
 Some very good examples can be found [here](http://www.baeldung.com/java-optional).
 The examples are written in Java, but the concept should get across regardless.
 
@@ -35,7 +35,6 @@ const results = Optional.ofNullable(response)
                         .ifPresent(data => serialize(data))
                         .orElse([]);
 ```
-
 
 ## Contributing
 

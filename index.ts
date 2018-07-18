@@ -179,7 +179,6 @@ export class Optional<T> {
     return result && this.isPresent() ? this : Optional.empty();
   }
 
-
   /**
    * If a value is present, returns an `Optional` describing (as if by
    * {@link ofNullable}) the result of applying the given mapping function to
