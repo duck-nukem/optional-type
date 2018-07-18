@@ -1,9 +1,25 @@
-export class Optional<T> {
-  private readonly value: Nullable<T>;
+import { InvalidValueException } from './exceptions';
 
-  constructor(value?: Nullable<T>, allowNull = false) {
-    if (value === null && !allowNull) {
-      throw new NullValueException();
+type JavascriptRepresentation = string;
+type InvalidType = JavascriptRepresentation | 'null' | 'undefined';
+type Nullable<T> = T | null;
+type Undefinable<T> = Nullable<T> | undefined;
+
+export class Optional<T> {
+  private readonly value: Nullable<T> | Undefinable<T>;
+  private readonly invalidTypes = new Set<InvalidType>();
+  private readonly allowedInvalidTypes = new Set<InvalidType>();
+
+  constructor(
+      value?: Nullable<T> | Undefinable<T>,
+      invalidTypes: InvalidType[] = [],
+      allowedInvalidTypes: InvalidType[] = [],
+  ) {
+    this.invalidTypes = new Set<InvalidType>(invalidTypes);
+    this.allowedInvalidTypes = new Set<InvalidType>(allowedInvalidTypes);
+
+    if (this.isTypeInvalid(value)) {
+      throw new InvalidValueException();
     }
 
     this.value = value;
@@ -21,10 +37,12 @@ export class Optional<T> {
    * @param value the value to describe, which must be non-`null`
    * @param <T> the type of the value
    * @return an `Optional` with the value present
-   * @throws `NullValueException` if value is `null`
+   * @throws `InvalidValueException` if value is `null`
    */
   static of<T>(value: T): Optional<T> {
-    return new Optional(value);
+    const disallow = ['null', 'undefined'];
+
+    return new Optional(value, disallow);
   }
 
   /**
@@ -37,7 +55,24 @@ export class Optional<T> {
    *         is non-`null`, otherwise an empty `Optional`
    */
   static ofNullable<T>(value: Nullable<T>): Optional<T> {
-    return new Optional<T>(value, true);
+    const typeConfig = ['null'];
+
+    return new Optional<T>(value, typeConfig, typeConfig);
+  }
+
+  /**
+   * Returns an `Optional` describing the given value, if
+   * non-`undefined` or non-`null`, otherwise returns an empty `Optional`.
+   *
+   * @param value the possibly-`undefined` or `null` value to describe
+   * @param <T> the type of the value
+   * @return an `Optional` with a present value if the specified value
+   *         is non-`null` and non-`undefined`, otherwise an empty `Optional`
+   */
+  static ofUndefinable<T>(value: Undefinable<T>): Optional<T> {
+    const typeConfig = ['null', 'undefined'];
+
+    return new Optional<T>(value, typeConfig, typeConfig);
   }
 
   /**
@@ -74,7 +109,9 @@ export class Optional<T> {
    * @return `true` if a value is present, otherwise `false`
    */
   isPresent(): boolean {
-    return this.value !== null;
+    const valueType = String(this.value) as JavascriptRepresentation;
+
+    return !this.invalidTypes.has(valueType);
   }
 
   /**
@@ -150,17 +187,17 @@ export class Optional<T> {
 
   /**
    * If a value is present, returns the value, otherwise throws
-   * `NullValueException`.
+   * `InvalidValueException`.
    *
    * @deprecated this is counter intuitive for `Optional`,
    * since it throws an error if the value is `null`, recommended to
    * use {@link isPresent} or {@link ifPresent}, etc instead
    * @return the non-`null` value described by this `Optional`
-   * @throws `NullValueException` if no value is present
+   * @throws `InvalidValueException` if no value is present
    */
   get(): T {
     if (!this.isPresent()) {
-      throw new NullValueException();
+      throw new InvalidValueException();
     }
 
     return this.value;
@@ -199,7 +236,7 @@ export class Optional<T> {
   map<U>(mapper: (value?: T) => U): Optional<U> {
     const value = mapper(this.value);
 
-    if (!this.isPresent() || value === null) {
+    if (!this.isPresent() || this.isTypeInvalid(value)) {
       return Optional.empty();
     }
 
@@ -225,18 +262,18 @@ export class Optional<T> {
   flatMap<U>(mapper: (value?: T) => U): U | Optional<T> {
     const value = mapper(this.value);
 
-    if (!this.isPresent() || value === null) {
+    if (!this.isPresent() || this.isTypeInvalid(value)) {
       return Optional.empty();
     }
 
     return value;
   }
-}
 
-export type Nullable<T> = T | null;
+  private isTypeInvalid<T>(value: Undefinable<T>): boolean {
+    const valueType = String(value) as JavascriptRepresentation;
+    const isInvalidType = this.invalidTypes.has(valueType);
+    const isWhiteListed = !this.allowedInvalidTypes.has(valueType);
 
-export class NullValueException extends Error {
-  constructor() {
-    super('Optional received a null value without configuration');
+    return isInvalidType && isWhiteListed;
   }
 }
