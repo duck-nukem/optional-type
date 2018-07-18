@@ -38,7 +38,7 @@ Optional.ofNullable(response)
 ```
 
 Now has support for pivoting on both `undefined` & `null` if you
-don't want to differentiate in JS, just expect it to work. 
+don't want to differentiate in JS, just expect it to work.
 
 ```
 Optional.ofUndefinable(response);
