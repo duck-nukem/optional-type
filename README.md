@@ -2,6 +2,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/702b920220cbcf5e8894/maintainability)](https://codeclimate.com/github/kreatemore/optional-ts/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/702b920220cbcf5e8894/test_coverage)](https://codeclimate.com/github/kreatemore/optional-ts/test_coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/kreatemore/optional-ts/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kreatemore/optional-ts?targetFile=package.json)
+[![CircleCI](https://circleci.com/gh/kreatemore/optional-type.svg?style=svg)](https://circleci.com/gh/kreatemore/optional-type)
 
 A Typescript class trying to be Java's Optional.
 
