@@ -28,12 +28,20 @@ A Typescript class trying to be Java's Optional.
 Some very good examples can be found [here](http://www.baeldung.com/java-optional).
 The examples are written in Java, but the concept should get across regardless.
 
+Sample code:
 ```
-const results = Optional.ofNullable(response)
-                        .map(response => response.data)
-                        .filter(data => !!data.length)
-                        .ifPresent(data => serialize(data))
-                        .orElse([]);
+Optional.ofNullable(response)
+        .map(response => response.data)
+        .filter(data => !!data.length)
+        .ifPresent(data => serialize(data))
+        .orElse([]);
+```
+
+Now has support for pivoting on both `undefined` & `null` if you
+don't want to differentiate in JS, just expect it to work.
+
+```
+Optional.ofUndefinable(response);
 ```
 
 ## Contributing

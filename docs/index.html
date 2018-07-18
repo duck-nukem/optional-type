@@ -88,11 +88,15 @@
 				<h2 id="examples">Examples</h2>
 				<p>Some very good examples can be found <a href="http://www.baeldung.com/java-optional">here</a>.
 				The examples are written in Java, but the concept should get across regardless.</p>
-				<pre><code><span class="hljs-title">const</span> results = <span class="hljs-type">Optional</span>.ofNullable(response)
-                        .map(response =&gt; response.<span class="hljs-class"><span class="hljs-keyword">data</span>)</span>
-                        .filter(<span class="hljs-class"><span class="hljs-keyword">data</span> =&gt; !!<span class="hljs-keyword">data</span>.length)</span>
-                        .ifPresent(<span class="hljs-class"><span class="hljs-keyword">data</span> =&gt; serialize(<span class="hljs-title">data</span>))</span>
-                        .orElse([]);
+				<p>Sample code:</p>
+				<pre><code><span class="hljs-type">Optional</span>.ofNullable(response)
+        .map(response =&gt; response.<span class="hljs-class"><span class="hljs-keyword">data</span>)</span>
+        .filter(<span class="hljs-class"><span class="hljs-keyword">data</span> =&gt; !!<span class="hljs-keyword">data</span>.length)</span>
+        .ifPresent(<span class="hljs-class"><span class="hljs-keyword">data</span> =&gt; serialize(<span class="hljs-title">data</span>))</span>
+        .orElse([]);
+</code></pre><p>Now has support for pivoting on both <code>undefined</code> &amp; <code>null</code> if you
+				don&#39;t want to differentiate in JS, just expect it to work. </p>
+				<pre><code>Optional.ofUndefinable(response)<span class="hljs-comment">;</span>
 </code></pre><h2 id="contributing">Contributing</h2>
 				<p>To get the project running locally:</p>
 				<ol>
@@ -113,11 +117,23 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/nullvalueexception.html" class="tsd-kind-icon">Null<wbr>Value<wbr>Exception</a>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/invalidvalueexception.html" class="tsd-kind-icon">Invalid<wbr>Value<wbr>Exception</a>
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/optional.html" class="tsd-kind-icon">Optional</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#invalidtype" class="tsd-kind-icon">Invalid<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#javascriptrepresentation" class="tsd-kind-icon">Javascript<wbr>Representation</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
+						<a href="globals.html#nullable" class="tsd-kind-icon">Nullable</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
+						<a href="globals.html#undefinable" class="tsd-kind-icon">Undefinable</a>
 					</li>
 				</ul>
 			</nav>
