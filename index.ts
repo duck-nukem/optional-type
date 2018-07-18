@@ -1,7 +1,7 @@
 export class Optional<T> {
-  private readonly value: T | null;
+  private readonly value: Nullable<T>;
 
-  constructor(value?: T | null, allowNull = false) {
+  constructor(value?: Nullable<T>, allowNull = false) {
     if (value === null && !allowNull) {
       throw new NullValueException();
     }
@@ -36,7 +36,7 @@ export class Optional<T> {
    * @return an `Optional` with a present value if the specified value
    *         is non-`null`, otherwise an empty `Optional`
    */
-  static ofNullable<T>(value: T | null): Optional<T> {
+  static ofNullable<T>(value: Nullable<T>): Optional<T> {
     return new Optional<T>(value, true);
   }
 
@@ -97,7 +97,10 @@ export class Optional<T> {
    * @param emptyAction the empty-based action to be performed, if no value is
    *        present
    */
-  ifPresentOrElse(action: (value: T) => void, emptyAction: () => any): void {
+  ifPresentOrElse(
+      action: (value: T) => void,
+      emptyAction: () => T | void,
+  ): void {
     if (this.isPresent()) {
       action(this.value);
     } else {
@@ -113,7 +116,7 @@ export class Optional<T> {
    *        May be `null`.
    * @return the value, if present, otherwise `other`
    */
-  orElse(other: T | null): T {
+  orElse(other: Nullable<T>): T {
     return this.isPresent() ? this.value : other;
   }
 
@@ -229,6 +232,8 @@ export class Optional<T> {
     return value;
   }
 }
+
+export type Nullable<T> = T | null;
 
 export class NullValueException extends Error {
   constructor() {
