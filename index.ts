@@ -221,7 +221,8 @@ export class Optional<T> {
 
   /**
    * If a value is present, returns an `Optional` describing (as if by
-   * {@link ofNullable}) the result of applying the given mapping function to
+   * {@link ofNullable} or {@link ofUndefinable}, depending on the source)
+   * the result of applying the given mapping function to
    * the value, otherwise returns an empty `Optional`.
    *
    * <p>If the mapping function returns a `null` result then this method
