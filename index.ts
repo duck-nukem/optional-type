@@ -213,7 +213,7 @@ export class Optional<T> {
    *         `Optional`, if a value is present and the value matches the
    *         given predicate, otherwise an empty `Optional`
    */
-  filter(predicate: (value?: T) => boolean): Optional<T> {
+  filter(predicate: (value: T) => boolean): Optional<T> {
     const result = predicate(this.value);
 
     return result && this.isPresent() ? this : Optional.empty();
@@ -233,14 +233,21 @@ export class Optional<T> {
    *         function to the value of this `Optional`, if a value is
    *         present, otherwise an empty `Optional`
    */
-  map<U>(mapper: (value?: T) => U): Optional<U> {
+  map<U>(mapper: (value: T) => U): Optional<U> {
     const value = mapper(this.value);
 
     if (!this.isPresent() || this.isTypeInvalid(value)) {
       return Optional.empty();
     }
 
-    return Optional.ofNullable(value);
+    return this.mapToOptional(value);
+  }
+
+  private mapToOptional<T>(value: T): Optional<T> {
+    const invalidTypes = Array.from(this.invalidTypes.values());
+    const allowedInvalidTypes = Array.from(this.allowedInvalidTypes.values());
+
+    return new Optional(value, invalidTypes, allowedInvalidTypes);
   }
 
   /**
@@ -259,7 +266,7 @@ export class Optional<T> {
    *         function to the value of this `Optional`, if a value is
    *         present, otherwise an empty `Optional`
    */
-  flatMap<U>(mapper: (value?: T) => U): U | Optional<T> {
+  flatMap<U>(mapper: (value: T) => U): U | Optional<T> {
     const value = mapper(this.value);
 
     if (!this.isPresent() || this.isTypeInvalid(value)) {
