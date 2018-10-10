@@ -280,8 +280,8 @@ export class Optional<T> {
   private isTypeInvalid<T>(value: Undefinable<T>): boolean {
     const valueType = String(value) as JavascriptRepresentation;
     const isInvalidType = this.invalidTypes.has(valueType);
-    const isWhiteListed = !this.allowedInvalidTypes.has(valueType);
+    const isNotWhiteListed = !this.allowedInvalidTypes.has(valueType);
 
-    return isInvalidType && isWhiteListed;
+    return isInvalidType && isNotWhiteListed;
   }
 }
