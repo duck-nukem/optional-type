@@ -21,7 +21,7 @@
     "jest-junit": "^6.0.0",
     "ts-jest": "^24.0.0",
     "tslint": "^5.11.0",
-    "typedoc": "^0.14.0",
+    "typedoc": "^0.15.0",
     "typescript": "^3.1.1"
   },
   "jest": {
