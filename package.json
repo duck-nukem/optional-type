@@ -17,7 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^24.0.0",
-    "jest": "^23.6.0",
+    "jest": "^25.0.0",
     "jest-junit": "^7.0.0",
     "ts-jest": "^24.0.0",
     "tslint": "^5.11.0",
