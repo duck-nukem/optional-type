@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:ci": "jest --runInBand --coverage",
-    "docs": "typedoc --ignoreCompilerErrors --mode file --out ./docs/ --name optional-type --readme README.md --excludePrivate --module system --exclude /node_modules/**"
+    "docs": "typedoc --ignoreCompilerErrors --mode file --out ./docs/ --name optional-type --includeVersion --readme README.md --excludePrivate --module system --exclude /node_modules/**"
   },
   "keywords": [
     "optional",
