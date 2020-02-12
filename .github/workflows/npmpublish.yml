@@ -14,7 +14,7 @@ jobs:
           node-version: 12
       - run: npm install
       - run: npm run test:ci
-      - run: npm version ${{ github.event.release.tag_name }}
+      - run: npm version --git-tag-version=false ${{ github.event.release.tag_name }}
       - run: npm run docs
       - uses: palmerhq/changecast@v1.0.0
         
