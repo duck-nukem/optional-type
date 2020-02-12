@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Publish
 
 on:
   release:
@@ -16,6 +16,7 @@ jobs:
       - run: npm run test:ci
       - run: npm version ${{ github.event.release.tag_name }}
       - run: npm run docs
+      - uses: palmerhq/changecast@v1.0.0
         
   publish-npm:
     needs: build
